@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-6 mx-auto">
+            <h1>LOGIN</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="form-group">
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="username">Username</label>
+                    <input class="form-control" type="text" [formControlName]="'username'"/>
+                    <div *ngIf="loginForm.get('username')?.dirty && loginForm.get('username')?.hasError('required')">
+                        Username field is a required field
+                    </div>
+                </div>
+                
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="username">Password</label>
+                    <input class="form-control" type="password" [formControlName]="'password'"/>
+                    <div *ngIf="loginForm.get('password')?.dirty && loginForm.get('password')?.hasError('required')">
+                        Password field is a required field
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block mb-4" type="button">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
